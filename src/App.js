@@ -1,5 +1,4 @@
 import './App.css';
-import Login from "./Login"
 import './background-image.jpg'
 
 function App() {
