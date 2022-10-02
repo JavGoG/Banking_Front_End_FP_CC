@@ -6,6 +6,8 @@
     --primary-light-hsl: 200, 100%, 91%;
     --primary-hsl: 200, 100%, 50%;
     --primary-dark-hsl: 200, 100%, 6%;
+    --success-hsl: 100, 60%, 50%;
+    --error-hsl: 0, 60%, 50%;
 }
 body{
     margin:0;
@@ -32,7 +34,7 @@ body{
 
 }
 
-.login-tittle{
+.login-title{
   margin: 0;
   color: white;
   text-align: center;
@@ -52,13 +54,13 @@ body{
   flex-direction: column;
   gap:7px;
 }
-.input-group.lable{
+.input-group label{
   color: white;
   font-weight: lighter;
 }
 .input-group input{
   font-size: 1.25rem;
-  padding: .5;
+  padding: .5em;
   background-color: hsl(var(--primary-light-hsl), .3);
   border: none;
   outline: none;
@@ -66,6 +68,40 @@ body{
   color: white;
   font-weight: lighter;
 }
-.input-group:focus {
+.input-group.success input{
+  box-shadow: 0 0 0 1px hsl(var(--success-hsl));
+}
+.input-group.error input{
+  box-shadow: 0 0 0 1px hsl(var(--error-hsl));
+}
+.input-group input:focus {
   box-shadow:  0 0 0 1px hsl(var(--primary-hsl));
+}
+.input-group .msg {
+  display: none;
+  font-size: .75rem;
+}
+.input-group.success .msg, 
+.input-group.error .msg {
+  display: block;
+}
+.input-group.input-group.error .msg{
+  color: hsl(var(--error-hsl));
+}
+.input-group.success .msg {
+  color: hsl(var(--success-hsl));
+}
+.login-button {
+  padding: .5em 1 em;
+  font-size:  1.5rem;
+  font-weight: lighter;
+  color:white;
+  background-color: hsl(var(--primary-hsl), .25);
+  border-radius: .25em;
+  outline: none;
+  cursor: pointer;
+}
+.login-button:hover, 
+.login-button:focus {
+  background-color: hsl(var(--primary-hsl), .4);
 }
